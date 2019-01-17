@@ -12,7 +12,7 @@ public class SkyView {
                 }
             }
             else {
-                for(int j = view[0].length-1; j > 0; j--){
+                for(int j = view[0].length-1; j > -1; j--){
                     view[i][j] = scanned[numscanned];
                     numscanned++;
                 }
@@ -23,8 +23,8 @@ public class SkyView {
     public double getAverage(int startRow, int endRow, int startCol, int endCol){
         double total = 0;
         int count = 0;
-        for(int i = startRow; i < endRow; i++){
-            for(int j = startCol; j < endCol; j++){
+        for(int i = startRow; i < endRow+1; i++) {
+            for (int j = startCol; j < endCol + 1; j++) {
                 total += view[i][j];
                 count++;
             }
